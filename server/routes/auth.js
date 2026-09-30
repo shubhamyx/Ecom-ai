@@ -36,5 +36,5 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-console.log('User is:', User);
+
 module.exports = router;

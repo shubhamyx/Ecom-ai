@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get('/health',(req,res)=>{
     res.json({status:'ok'});
-    
+
 });
 
 const authRoutes=require('./routes/auth');
@@ -23,3 +23,6 @@ mongoose.connect(process.env.MONGO_URI)
 
 const PORT=process.env.PORT || 5000;
 app.listen(PORT,()=>console.log(`Server running on PORT${PORT}`));
+
+const productRoutes= require('./routes/products');
+app.use('/api/products', productRoutes);
